@@ -4,20 +4,64 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MBTI 연애 궁합 테스트</title>
-<meta name="description" content="MBTI 연애 궁합을 무료로 확인해보세요.">
-<style>body{margin:0;font-family:sans-serif;background:#111827;color:#fff;text-align:center}.container{padding:80px 20px}.card{max-width:700px;margin:40px auto;background:#1f2937;padding:30px;border-radius:24px}.btn{display:inline-block;padding:14px 24px;background:#f472b6;color:#000;border-radius:12px;text-decoration:none;font-weight:bold}.ad{margin-top:30px;padding:20px;background:#0f172a;border-radius:16px}</style>
+<meta name="description" content="MBTI 궁합과 성격 분석을 확인해보세요">
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#111827;color:#fff}
+header{padding:20px;background:#1f2937;display:flex;justify-content:space-between;align-items:center}
+nav a{color:#fff;text-decoration:none;margin-left:15px}
+.hero{text-align:center;padding:80px 20px}
+.container{max-width:900px;margin:auto;padding:20px}
+.card{background:#1f2937;padding:30px;border-radius:20px;margin-top:30px}
+select,button{padding:14px 18px;border:none;border-radius:12px;margin:10px;font-size:16px}
+button{cursor:pointer;background:#f472b6;color:#000;font-weight:bold}
+.result{background:#111827;padding:20px;border-radius:16px;margin-top:20px}
+.blog{background:#172033;padding:20px;border-radius:16px;margin-top:20px}
+footer{text-align:center;padding:40px;opacity:0.7}
+</style>
 </head>
 <body>
-<div class="container">
+<header>
+<h2>MBTI Love Test</h2>
+<nav>
+<a href="index.html">홈</a>
+<a href="blog-infj-entp.html">블로그</a>
+<a href="about.html">소개</a>
+</nav>
+</header>
+<section class="hero">
 <h1>MBTI 연애 궁합 테스트</h1>
-<p>당신의 MBTI와 최고의 연애 궁합을 확인해보세요.</p>
+<p>당신의 MBTI와 잘 맞는 유형을 확인해보세요.</p>
+</section>
+<div class="container">
 <div class="card">
-<h2>추천 결과 예시</h2>
-<p>INFJ ♥ ENTP</p>
-<p>서로의 부족한 부분을 채워주는 최고의 조합입니다.</p>
-<a class="btn" href="#">궁합 테스트 시작</a>
-<div class="ad">Google AdSense 광고 영역</div>
+<h2>MBTI 선택</h2>
+<select id="mbti">
+<option>INFJ</option>
+<option>ENTP</option>
+<option>INTJ</option>
+<option>ENFP</option>
+</select>
+<button onclick="showMatch()">궁합 보기</button>
+<div id="result" class="result">궁합 결과가 여기에 표시됩니다.</div>
+</div>
+<div class="blog">
+<h2>추천 글</h2>
+<p><a href="blog-infj-entp.html" style="color:#f472b6">INFJ와 ENTP 궁합 분석</a></p>
 </div>
 </div>
+<footer>© 2026 MBTI Love Test</footer>
+<script>
+function showMatch(){
+const mbti=document.getElementById('mbti').value;
+const result=document.getElementById('result');
+const data={
+INFJ:'ENTP와 깊은 대화를 나누며 균형을 맞출 수 있습니다.',
+ENTP:'INFJ와 감정적 교류가 강한 편입니다.',
+INTJ:'ENFP와 상호 보완적인 관계가 될 수 있습니다.',
+ENFP:'INTJ와 서로 다른 매력을 느끼는 조합입니다.'
+};
+result.innerHTML='<h3>'+mbti+' 궁합</h3><p>'+data[mbti]+'</p>';
+}
+</script>
 </body>
 </html>
